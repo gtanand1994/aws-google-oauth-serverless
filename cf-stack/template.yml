@@ -1,0 +1,22 @@
+#sam init -r nodejs10.x
+#testing : sam local start-api
+#aws s3api create-bucket --bucket <bucketname> --region=ap-south-1
+#sam package --template-file ./template.yml --s3-bucket <bucketname> --output-template-file ./out.yaml
+#sam deploy --template-file ./out.yaml --stack-name <stackname> --capabilities CAPABILITY_IAM
+
+AWSTemplateFormatVersion : '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Description: Lambda to get sign-in token from AWS
+Resources:
+  App:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: nodejs10.x
+      Handler: index.handler
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /
+            Method: POST

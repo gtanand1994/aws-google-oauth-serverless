@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-signin-scope" content="profile">
+    <!-- GOOGLE CLIENT ID -->
+    <meta name="google-signin-client_id" content="274320761864-phun4mqmadfp2m3q2lkfdnva8q05pmgq.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.871.0.js"></script>
+    <script src="/awsconfig.js"></script>
+    <script src="/authentication.js"></script>
+    <style type="text/css">
+        div#container {
+            height: 50px;
+            width: 200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -25px;
+            margin-left: -100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="g-signin2" data-width="200" data-height="50" data-onsuccess="authenticate" data-theme="dark"></div>
+    </div>
+</body>
+
+</html>
